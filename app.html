@@ -1,35 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Number Guessing Game</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Summit Guess | Hiking Game</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        linear-gradient(rgba(15,23,42,0.65), rgba(15,23,42,0.65)),
+        url("images/mountain-bg.jpg");
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+
+    .game {
+      background: rgba(255,255,255,0.95);
+      color: #0f172a;
+      padding: 28px;
+      border-radius: 18px;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 1.8rem;
+    }
+
+    .subtitle {
+      color: #475569;
+      margin-bottom: 18px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 10px;
+      border: 1px solid #cbd5e1;
+      margin-bottom: 12px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 12px;
+      border: none;
+      background: #2563eb;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .message {
+      margin-top: 14px;
+      font-weight: 600;
+    }
+
+    .stats {
+      margin-top: 14px;
+      font-size: 0.95rem;
+      color: #475569;
+    }
+
+    .links {
+      margin-top: 18px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .links a {
+      text-decoration: none;
+      font-weight: 700;
+      color: #2563eb;
+      border: 1px solid #c7d2fe;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #eef2ff;
+    }
+  </style>
 </head>
 <body>
 
-<h1>Guess the Number (1–50)</h1>
+  <div class="game">
+    <h1>🏔️ Summit Guess</h1>
+    <p class="subtitle">
+      You’re hiking toward the summit.  
+      Guess the elevation marker (1–50) to reach the top.
+    </p>
 
-<input id="guess" type="number" min="1" max="50">
-<button onclick="check()">Guess</button>
+    <input
+      type="number"
+      id="guessInput"
+      placeholder="Enter a number (1–50)"
+      min="1"
+      max="50">
 
-<p id="msg"></p>
+    <button onclick="makeGuess()">Check Elevation</button>
 
-<script>
-  let number = Math.floor(Math.random() * 50) + 1;
+    <div class="message" id="message"></div>
 
-  function check() {
-    let g = Number(document.getElementById("guess").value);
-    let msg = document.getElementById("msg");
+    <div class="stats">
+      Attempts: <span id="attempts">0</span> |
+      Best climb: <span id="best">–</span>
+    </div>
 
-    if (g === number) {
-      msg.textContent = "Correct!";
-    } else if (g < number) {
-      msg.textContent = "Too low";
-    } else {
-      msg.textContent = "Too high";
+    <div class="links">
+      <a href="scratch.html">← Back to Scratch Page</a>
+      <a href="index.html">Professional Site</a>
+    </div>
+  </div>
+
+  <script>
+    let target = Math.floor(Math.random() * 50) + 1;
+    let attempts = 0;
+    let best = null;
+
+    function makeGuess() {
+      const input = document.getElementById("guessInput");
+      const guess = Number(input.value);
+      const message = document.getElementById("message");
+
+      if (!guess || guess < 1 || guess > 50) {
+        message.textContent = "⛔ Enter a number between 1 and 50.";
+        return;
+      }
+
+      attempts++;
+      document.getElementById("attempts").textContent = attempts;
+
+      if (guess === target) {
+        message.textContent = "🎉 Summit reached! You found the elevation!";
+        if (best === null || attempts < best) {
+          best = attempts;
+          document.getElementById("best").textContent = best;
+        }
+        resetGame();
+      } else if (guess < target) {
+        message.textContent = "⬆️ Keep climbing… go higher.";
+      } else {
+        message.textContent = "⬇️ Too high — descend a bit.";
+      }
+
+      input.value = "";
     }
-  }
-</script>
+
+    function resetGame() {
+      target = Math.floor(Math.random() * 50) + 1;
+      attempts = 0;
+      document.getElementById("attempts").textContent = attempts;
+    }
+  </script>
 
 </body>
 </html>
-
