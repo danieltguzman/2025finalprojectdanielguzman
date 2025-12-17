@@ -1,1 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daniel Guzman | Personal Site</title>
+
+  <!-- Bootstrap theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/litera/bootstrap.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Daniel Guzman</a>
+    <div class="navbar-nav ms-auto">
+      <a class="nav-link active" href="index.html">Home</a>
+      <a class="nav-link" href="resume.html">Résumé</a>
+      <a class="nav-link" href="portfolio.html">Portfolio</a>
+    </div>
+  </div>
+</nav>
+
+<header class="py-5">
+  <div class="container">
+    <h1 class="display-5 fw-bold">Student • Builder • Always Moving</h1>
+    <p class="lead">
+      I’m a BYU pre-business student interested in analytics, leadership, and building useful things.
+      Outside class I train at the gym, play intramural basketball, hike Utah peaks,
+      and recently returned to Peru with a former mission companion.
+    </p>
+    <a class="btn btn-primary btn-lg" href="resume.html">View Résumé</a>
+  </div>
+</header>
+
+<footer class="text-center py-4 text-muted">
+  © <span id="year"></span> Daniel Guzman
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
 
