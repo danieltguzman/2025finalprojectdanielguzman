@@ -1,41 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Scratch Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scratch Page | Daniel Guzman</title>
   <link rel="stylesheet" href="scratch.css">
 </head>
 <body>
 
-<h1>Scratch Page: Gym, Peru, Intramurals, Hikes</h1>
+  <!-- HERO / HEADER -->
+  <header class="hero" id="top">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h1>Into the Mountains</h1>
+        <p>Gym • Hiking • Intramurals • Peru • Exploration</p>
 
-<h2>Weekly Routine</h2>
-<ol>
-  <li>Training
-    <ul>
-      <li>Push</li>
-      <li>Pull</li>
-      <li>Legs</li>
-    </ul>
-  </li>
-  <li>Basketball</li>
-  <li>Recovery</li>
-</ol>
+        <!-- Navigation + anchors -->
+        <nav class="hero-nav">
+          <a href="#routine">Routine</a>
+          <a href="#photo">Photo</a>
+          <a href="#video">Video</a>
+          <a href="#tableau">Tableau</a>
+          <a class="pill" href="app.html">Play Number Game</a>
+          <a class="ghost" href="index.html">Back to Professional Site</a>
+        </nav>
+      </div>
+    </div>
+  </header>
 
-<h2>Photo</h2>
-<img src="images/hike.jpg" alt="Hiking photo" width="400">
+  <main class="content">
 
-<h2>YouTube Video</h2>
-<iframe width="560" height="315"
-  src="https://www.youtube.com/embed/ZXsQAXx_ao0"
-  allowfullscreen></iframe>
+    <!-- ROUTINE / LISTS (DIV 1) -->
+    <section class="card" id="routine">
+      <h2>My weekly routine</h2>
+      <p class="muted">Ordered list with an unordered list inside (HTML requirement).</p>
 
-<h2>Tableau Chart</h2>
-<div class='tableauPlaceholder' id='viz1765948781212' style='position: relative'><noscript><a href='#'><img alt='Dashboard 3 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NB&#47;NBATeamStatsDashboard&#47;Dashboard3&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='NBATeamStatsDashboard&#47;Dashboard3' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NB&#47;NBATeamStatsDashboard&#47;Dashboard3&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1765948781212');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='2244px';vizElement.style.height='1206px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+      <ol>
+        <li>
+          Strength training
+          <ul>
+            <li>Push (chest / shoulders / triceps)</li>
+            <li>Pull (back / biceps)</li>
+            <li>Legs (squat & hinge)</li>
+          </ul>
+        </li>
+        <li>Intramural basketball</li>
+        <li>Hiking Utah trails</li>
+      </ol>
+    </section>
 
-<p><a href="app.html">Go to Web App</a></p>
-<p><a href="index.html">Back to Home</a></p>
+    <!-- PHOTO (DIV 2) -->
+    <section class="card" id="photo">
+      <h2>Hiking photo</h2>
+      <p class="muted">Stored locally in my GitHub repository.</p>
+
+      <img src="images/hike.jpg" alt="Hiking photo" class="photo">
+    </section>
+
+    <!-- YOUTUBE VIDEO (DIV 3) -->
+    <section class="card" id="video">
+      <h2>Hiking motivation video</h2>
+      <p class="muted">Embedded YouTube video (not taught in class).</p>
+
+      <div class="video-wrap">
+        <iframe
+          src="https://www.youtube.com/embed/L-WauCNabfI"
+          title="Hiking video"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- TABLEAU (DIV 4) -->
+    <section class="card" id="tableau">
+      <h2>Interactive Tableau visualization</h2>
+      <p class="muted">Live embedded Tableau chart (interactive).</p>
+
+      <!-- 🔽 PASTE YOUR TABLEAU EMBED CODE RIGHT BELOW THIS LINE 🔽 -->
+<div class='tableauPlaceholder' id='viz1765994960469' style='position: relative'>
+  <noscript>
+    <a href='#'>
+      <img alt='Dashboard 1'
+        src='https://public.tableau.com/static/images/Mo/MountainHikes/Dashboard1/1_rss.png'
+        style='border: none' />
+    </a>
+  </noscript>
+
+  <object class='tableauViz' style='display:none;'>
+    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+    <param name='embed_code_version' value='3' />
+    <param name='site_root' value='' />
+    <param name='name' value='MountainHikes/Dashboard1' />
+    <param name='tabs' value='no' />
+    <param name='toolbar' value='yes' />
+    <param name='static_image' value='https://public.tableau.com/static/images/Mo/MountainHikes/Dashboard1/1.png' />
+    <param name='animate_transition' value='yes' />
+    <param name='display_static_image' value='yes' />
+    <param name='display_spinner' value='yes' />
+    <param name='display_overlay' value='yes' />
+    <param name='display_count' value='yes' />
+    <param name='language' value='en-US' />
+  </object>
+</div>
+
+<script type='text/javascript'>
+  var divElement = document.getElementById('viz1765994960469');
+  var vizElement = divElement.getElementsByTagName('object')[0];
+
+  /* Responsive sizing (better than fixed 1200px) */
+  vizElement.style.width = '100%';
+  vizElement.style.height = '850px';
+
+  var scriptElement = document.createElement('script');
+  scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+  vizElement.parentNode.insertBefore(scriptElement, vizElement);
+</script>
+
+      <!-- 🔼 END TABLEAU EMBED 🔼 -->
+
+      <div class="links">
+        <a href="app.html" class="btn">Open AI Number Game</a>
+        <a href="#top" class="btn ghost">Back to Top</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Daniel Guzman</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
-
