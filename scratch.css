@@ -1,1 +1,16 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f7fa;
+  color: #111;
+  padding: 20px;
+}
+
+h1 {
+  color: #0b1220;
+}
+
+img {
+  margin-top: 10px;
+  border-radius: 8px;
+}
 
